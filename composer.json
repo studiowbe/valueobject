@@ -14,7 +14,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Studiow\\ValueObject\\": "src"
+      "Studiow\\ValueObject\\": "src",
+      "Studiow\\ValueObject\\Test\\": "test"
     }
   }
 }
