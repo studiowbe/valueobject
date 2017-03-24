@@ -13,7 +13,6 @@ class NativeString
         $this->value = $value;
     }
 
-
     public function getValue(): string
     {
         return $this->value;
