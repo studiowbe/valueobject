@@ -24,7 +24,7 @@ class DictionaryTest extends TestCase
         $this->assertEquals('bar', $obj->get('foo'));
         $this->assertNull($obj->get('bar'));
         $this->assertEquals('default', $obj->get('bar', 'default'));
-        
+
         $this->assertEquals(1, sizeof($obj));
     }
 
