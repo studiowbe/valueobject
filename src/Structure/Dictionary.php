@@ -40,9 +40,6 @@ class Dictionary implements Countable, IteratorAggregate
         return new self(array_diff_key($this->data, array_flip((array)$key)));
     }
 
-    /**
-     * @return array
-     */
     public function getValue(): array
     {
         return $this->data;

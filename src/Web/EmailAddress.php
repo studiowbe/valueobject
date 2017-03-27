@@ -11,7 +11,7 @@ class EmailAddress extends NativeString
 {
     public function __construct(string $address)
     {
-        $hash = strtolower(trim($address));
+        $address = strtolower(trim($address));
 
         if (!filter_var($address, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException(sprintf("Invalid e-mail address: %s", $address));
