@@ -14,7 +14,7 @@ class EmailAddressTest extends TestCase
         $obj = new EmailAddress("test@example.com");
         $this->assertEquals("test@example.com", $obj->getValue());
     }
-    
+
     public function testNormalizeInput()
     {
         $obj = new EmailAddress("TEST@example.com");
