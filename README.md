@@ -1,2 +1,2 @@
 # Studiow\ValueObject
-Some usefull value objects
+Some useful value objects
