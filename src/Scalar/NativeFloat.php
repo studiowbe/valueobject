@@ -3,8 +3,9 @@
 
 namespace Studiow\ValueObject\Scalar;
 
+use JsonSerializable;
 
-class NativeFloat
+class NativeFloat implements JsonSerializable
 {
     private $value;
 
@@ -12,7 +13,6 @@ class NativeFloat
     {
         $this->value = $value;
     }
-
 
     public function getValue(): float
     {
@@ -22,5 +22,10 @@ class NativeFloat
     public function equals(NativeFloat $float): bool
     {
         return $this->getValue() === $float->getValue();
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->getValue();
     }
 }

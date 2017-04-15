@@ -3,8 +3,9 @@
 
 namespace Studiow\ValueObject\Scalar;
 
+use JsonSerializable;
 
-class NativeInteger
+class NativeInteger implements JsonSerializable
 {
     private $value;
 
@@ -22,5 +23,10 @@ class NativeInteger
     public function equals(NativeInteger $integer): bool
     {
         return $this->getValue() === $integer->getValue();
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->getValue();
     }
 }

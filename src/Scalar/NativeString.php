@@ -3,8 +3,9 @@
 
 namespace Studiow\ValueObject\Scalar;
 
+use JsonSerializable;
 
-class NativeString
+class NativeString implements JsonSerializable
 {
     private $value;
 
@@ -24,6 +25,11 @@ class NativeString
     }
 
     public function __toString(): string
+    {
+        return $this->getValue();
+    }
+
+    public function jsonSerialize()
     {
         return $this->getValue();
     }

@@ -6,8 +6,9 @@ namespace Studiow\ValueObject\Structure;
 use Countable;
 use IteratorAggregate;
 use ArrayIterator;
+use JsonSerializable;
 
-class Dictionary implements Countable, IteratorAggregate
+class Dictionary implements Countable, IteratorAggregate, JsonSerializable
 {
     private $data = [];
 
@@ -53,5 +54,10 @@ class Dictionary implements Countable, IteratorAggregate
     public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->data);
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->getValue();
     }
 }

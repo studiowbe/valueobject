@@ -3,8 +3,9 @@
 
 namespace Studiow\ValueObject\Scalar;
 
+use JsonSerializable;
 
-class NativeBool
+class NativeBool implements JsonSerializable
 {
     private $value;
 
@@ -23,4 +24,9 @@ class NativeBool
         return $this->getValue() === $bool->getValue();
     }
 
+
+    public function jsonSerialize()
+    {
+        return $this->getValue();
+    }
 }
