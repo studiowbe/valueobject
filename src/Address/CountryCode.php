@@ -262,12 +262,14 @@ class CountryCode
     public static function isValidCode(string $code): bool
     {
         $code = strtoupper(trim($code));
-        return in_array($code, self::$codes);
+
+        return array_key_exists($code, self::$codes);
     }
 
     public static function getName(string $code): string
     {
         $code = strtoupper(trim($code));
+
         if (!self::isValidCode($code)) {
             throw new  \OutOfBoundsException(sprintf('Invalid country code: %s', $code));
         }
